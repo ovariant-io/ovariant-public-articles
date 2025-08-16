@@ -5,10 +5,13 @@ category: "product-updates"
 author: "Alice Austin"
 tags: ["lua", "app-launch", "women's-health", "AI", "symptoms", "recommendations"]
 excerpt: "Introducing Lua, Ovariant's new health app designed to empower women through personalized insights, symptom tracking, and AI-powered recommendations."
+featured_image: "/assets/images/lua.png"
 reading_time: 3
 ---
 
 # We Launched Lua! 🎉
+
+![Lua App](/assets/images/lua.png)
 
 We're thrilled to announce the official launch of **Lua**, Ovariant's revolutionary health app designed specifically for women's wellness journey. Lua represents our commitment to empowering women's health through data-driven insights and personalized care.
 
