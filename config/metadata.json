@@ -1,0 +1,46 @@
+{
+  "repository": {
+    "name": "ovariant-public-articles",
+    "description": "Ovariant's public article repository that allows easy sharing and access to articles and publications",
+    "version": "1.0.0",
+    "created": "2025-01-15",
+    "last_updated": "2025-01-15"
+  },
+  "structure": {
+    "articles_path": "articles/",
+    "assets_path": "assets/",
+    "templates_path": "templates/",
+    "config_path": "config/"
+  },
+  "supported_formats": {
+    "articles": [".md", ".markdown"],
+    "images": [".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg"],
+    "videos": [".mp4", ".webm", ".mov"]
+  },
+  "naming_conventions": {
+    "articles": "YYYY-MM-DD-article-title.md",
+    "images": "descriptive-name.ext",
+    "videos": "descriptive-name.ext"
+  },
+  "categories": [
+    "product-updates",
+    "technical", 
+    "case-studies",
+    "tutorials",
+    "announcements"
+  ],
+  "required_frontmatter": [
+    "title",
+    "date", 
+    "category",
+    "author",
+    "excerpt"
+  ],
+  "optional_frontmatter": [
+    "tags",
+    "featured_image",
+    "draft",
+    "updated",
+    "reading_time"
+  ]
+}

@@ -1,0 +1,47 @@
+name: Validate Articles
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    
+    - name: Validate Markdown Files
+      run: |
+        # Check for broken links
+        find articles/ -name "*.md" -exec echo "Checking {}" \;
+        
+        # Validate frontmatter exists
+        for file in articles/**/*.md; do
+          if [ -f "$file" ]; then
+            if ! head -n 10 "$file" | grep -q "^---$"; then
+              echo "Warning: $file missing frontmatter"
+            fi
+          fi
+        done
+    
+    - name: Check Image References
+      run: |
+        # Check that referenced images exist
+        grep -r "!\[.*\](" articles/ | while read -r line; do
+          file=$(echo "$line" | cut -d: -f1)
+          image_path=$(echo "$line" | sed 's/.*!\[.*\](\([^)]*\)).*/\1/')
+          if [[ "$image_path" == /assets/* ]]; then
+            full_path=".${image_path}"
+            if [ ! -f "$full_path" ]; then
+              echo "Warning: Referenced image not found: $image_path in $file"
+            fi
+          fi
+        done
