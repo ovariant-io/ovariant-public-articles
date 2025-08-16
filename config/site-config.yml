@@ -1,0 +1,50 @@
+# Site Configuration for Ovariant Public Articles
+
+site:
+  name: "Ovariant Articles"
+  description: "Public articles and publications from Ovariant"
+  url: "https://articles.ovariant.com" # Update with actual domain
+  author: "Ovariant Team"
+  
+# Article settings
+articles:
+  per_page: 10
+  date_format: "MMMM d, yyyy"
+  excerpt_length: 160
+  
+# Categories configuration
+categories:
+  product-updates:
+    name: "Product Updates"
+    description: "Latest product announcements and feature releases"
+    color: "#007acc"
+  technical:
+    name: "Technical"
+    description: "Deep technical content and development insights"
+    color: "#28a745"
+  case-studies:
+    name: "Case Studies"
+    description: "Customer success stories and real-world implementations"
+    color: "#6f42c1"
+  tutorials:
+    name: "Tutorials"
+    description: "Step-by-step guides and how-to content"
+    color: "#fd7e14"
+  announcements:
+    name: "Announcements"
+    description: "Company news and important updates"
+    color: "#dc3545"
+
+# Social media and SEO
+social:
+  twitter: "@ovariant" # Update with actual handle
+  linkedin: "company/ovariant" # Update with actual handle
+  
+# Analytics (optional)
+analytics:
+  google_analytics: "" # Add GA tracking ID if needed
+  
+# Build settings
+build:
+  markdown_processor: "kramdown"
+  syntax_highlighter: "rouge"
